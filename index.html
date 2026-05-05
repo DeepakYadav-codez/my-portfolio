@@ -124,6 +124,25 @@
   .ptag { font-family: 'Space Mono', monospace; font-size: 0.65rem; padding: 4px 10px; border: 1px solid var(--border); color: var(--sub); }
   .project-arrow { font-size: 1.2rem; color: var(--sub); transition: color 0.3s, transform 0.3s; }
   .project-item:hover .project-arrow { color: var(--cyan); transform: translate(4px, -4px); }
+
+  .exp-list { display: flex; flex-direction: column; gap: 2px; background: var(--border); margin-top: 40px; }
+  .exp-item { background: var(--bg); padding: 48px 40px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; position: relative; transition: background 0.3s; }
+  .exp-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: linear-gradient(180deg, var(--cyan), var(--purple)); transition: height 0.5s ease; }
+  .exp-item:hover::before { height: 100%; }
+  .exp-item:hover { background: var(--card); }
+  .exp-company { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+  .exp-role { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .exp-duration { display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--sub); letter-spacing: 0.08em; }
+  .exp-dot { width: 6px; height: 6px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 6px #00ff88; flex-shrink: 0; }
+  .exp-desc { font-size: 0.95rem; color: var(--sub); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+  .exp-desc strong { color: var(--white); font-weight: 500; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cert-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--cyan); text-decoration: none; border: 1px solid rgba(0,255,255,0.25); padding: 8px 16px; letter-spacing: 0.06em; transition: background 0.3s, box-shadow 0.3s; }
+  .cert-link:hover { background: rgba(0,255,255,0.06); box-shadow: 0 0 16px var(--cyan-glow); }
+
+  @media (max-width: 900px) {
+    .exp-item { grid-template-columns: 1fr; gap: 20px; padding: 32px 24px; }
+  }
  
   .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); margin-top: 60px; }
   .process-step { background: var(--bg); padding: 48px 32px; }
@@ -231,6 +250,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
   </ul>
   <div class="nav-right">
     <a href="https://github.com/DeepakYadav-codez" target="_blank" class="nav-github" title="GitHub">
@@ -252,6 +272,7 @@
   <a href="#about" class="mobile-link">About</a>
   <a href="#services" class="mobile-link">Services</a>
   <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#experience" class="mobile-link">Experience</a>
   <a href="#contact" class="mobile-link">Contact</a>
   <a href="https://drive.google.com/file/d/1UmSjyLLsMq76Q-ejp8NTUJ7gQSIHycbG/view?usp=sharing" target="_blank" class="mobile-link" style="color:var(--cyan)">Resume ↗</a>
 </div>
@@ -419,7 +440,33 @@
     </a>
   </div>
 </section>
- 
+
+<section class="section" id="experience" style="padding-top:0;">
+  <div class="reveal">
+    <div class="section-label">Experience</div>
+    <h2 class="projects-title">Where I've<br><span style="color:var(--cyan)">worked.</span></h2>
+  </div>
+  <div class="exp-list reveal">
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-company">Code Core Global</div>
+        <div class="exp-role">Python Developer Intern</div>
+        <div class="exp-duration"><span class="exp-dot"></span>June 2025 — July 2025</div>
+      </div>
+      <div class="exp-right">
+        <p class="exp-desc">Worked as a Python Developer intern, building and shipping <strong>VillageConnect</strong> — a full-stack web platform connecting rural communities to essential services like healthcare, electricity and water supply. Implemented Flask backend, SQLite database design, REST APIs and deployed the live application on Render.</p>
+        <div class="exp-tags">
+          <span class="stag">Python</span><span class="stag">Flask</span><span class="stag">SQLite</span><span class="stag">REST API</span><span class="stag">Render</span>
+        </div>
+        <a href="https://drive.google.com/file/d/1mJ_AWggIWti10N-s4ISaT1yZfeSqfmOc/view?usp=sharing" target="_blank" class="cert-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          View Certificate ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" style="padding-top:0;">
   <div class="section-label reveal">My Process</div>
   <h2 class="services-title reveal" style="margin-bottom:0">How I work<br><span class="outline">with you</span></h2>
