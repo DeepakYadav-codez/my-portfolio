@@ -581,7 +581,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init('ftIc0974CaHI9yop7');
+  emailjs.init({publicKey: 'ftIc0974CaHI9yop7'});
   document.getElementById('sendBtn').addEventListener('click', function() {
     const name = document.getElementById('from_name').value.trim();
     const email = document.getElementById('from_email').value.trim();
@@ -597,7 +597,7 @@
     }
     sendText.textContent = 'Sending...';
     btn.disabled = true;
-    emailjs.send('service_c4axqap', 'template_6sunm9l', {
+    emailjs.send('service_c4axqap', 'template_0koauyi', {
       from_name: name,
       from_email: email,
       message: message
@@ -610,12 +610,13 @@
       document.getElementById('from_name').value = '';
       document.getElementById('from_email').value = '';
       document.getElementById('message').value = '';
-    }).catch(() => {
+    }).catch((error) => {
+      console.error('EmailJS error:', error);
       sendText.textContent = 'Send Message';
       btn.disabled = false;
       formMsg.style.display = 'block';
       formMsg.style.color = '#ff6b6b';
-      formMsg.textContent = 'Something went wrong. Please try again.';
+      formMsg.textContent = 'Error: ' + (error?.text || error?.message || 'Something went wrong. Please try again.');
     });
   });
 </script>
