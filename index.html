@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,13 @@
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a { color: var(--sub); text-decoration: none; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; font-family: 'Space Mono', monospace; }
   .nav-links a:hover { color: var(--cyan); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .nav-resume { background: transparent; border: 1px solid rgba(0,255,255,0.4); color: var(--cyan); padding: 8px 18px; font-family: 'Space Mono', monospace; font-size: 0.75rem; cursor: pointer; text-decoration: none; letter-spacing: 0.06em; transition: background 0.3s, color 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+  .nav-resume:hover { background: rgba(0,255,255,0.08); box-shadow: 0 0 20px var(--cyan-glow); }
+  .nav-resume svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .nav-github { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--border); color: var(--sub); text-decoration: none; transition: border-color 0.3s, color 0.3s, background 0.3s; }
+  .nav-github:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-glow); }
+  .nav-github svg { width: 18px; height: 18px; }
   .nav-cta { background: transparent; border: 1px solid var(--cyan); color: var(--cyan); padding: 10px 24px; font-family: 'Space Mono', monospace; font-size: 0.8rem; cursor: pointer; text-decoration: none; letter-spacing: 0.06em; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
   .nav-cta:hover { background: var(--cyan); color: var(--bg); box-shadow: 0 0 30px var(--cyan-glow); }
  
@@ -52,12 +60,15 @@
   .hero-sub { font-size: 1rem; color: var(--sub); max-width: 480px; line-height: 1.8; margin-bottom: 40px; position: relative; z-index: 2; animation: fadeUp 0.8s 0.3s ease both; font-weight: 300; }
   .hero-sub strong { color: var(--white); font-weight: 500; }
  
-  .hero-actions { display: flex; gap: 16px; align-items: center; position: relative; z-index: 2; animation: fadeUp 0.8s 0.4s ease both; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; position: relative; z-index: 2; animation: fadeUp 0.8s 0.4s ease both; flex-wrap: wrap; }
  
   .btn-primary { background: var(--purple); color: var(--white); padding: 14px 36px; font-family: 'Space Mono', monospace; font-size: 0.85rem; cursor: pointer; text-decoration: none; border: none; letter-spacing: 0.06em; transition: box-shadow 0.3s, transform 0.2s; display: inline-block; }
   .btn-primary:hover { box-shadow: 0 0 40px rgba(127,90,240,0.5); transform: translateY(-2px); }
-  .btn-secondary { color: var(--white); padding: 14px 36px; font-family: 'Space Mono', monospace; font-size: 0.85rem; cursor: pointer; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); letter-spacing: 0.06em; transition: border-color 0.3s, color 0.3s; }
+  .btn-secondary { color: var(--white); padding: 14px 36px; font-family: 'Space Mono', monospace; font-size: 0.85rem; cursor: pointer; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); letter-spacing: 0.06em; transition: border-color 0.3s, color 0.3s; display: inline-block; }
   .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+  .btn-resume { color: var(--cyan); padding: 14px 36px; font-family: 'Space Mono', monospace; font-size: 0.85rem; cursor: pointer; text-decoration: none; border: 1px solid rgba(0,255,255,0.35); letter-spacing: 0.06em; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+  .btn-resume:hover { border-color: var(--cyan); background: rgba(0,255,255,0.06); box-shadow: 0 0 24px var(--cyan-glow); }
+  .btn-resume svg { width: 15px; height: 15px; flex-shrink: 0; }
  
   .hero-stats { display: flex; gap: 48px; margin-top: 60px; position: relative; z-index: 2; animation: fadeUp 0.8s 0.5s ease both; }
   .stat-num { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--cyan); line-height: 1; }
@@ -99,7 +110,7 @@
  
   .projects-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 60px; }
   .project-list { display: flex; flex-direction: column; }
-  .project-item { display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: padding-left 0.3s; position: relative; }
+  .project-item { display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: padding-left 0.3s; position: relative; text-decoration: none; color: inherit; }
   .project-item::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--purple)); transition: width 0.4s; }
   .project-item:hover { padding-left: 24px; }
   .project-item:hover::before { width: 20px; }
@@ -133,6 +144,17 @@
   .cta-socials { display: flex; gap: 16px; justify-content: center; margin-top: 32px; }
   .social-link { width: 44px; height: 44px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--sub); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; transition: border-color 0.3s, color 0.3s, background 0.3s; }
   .social-link:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-glow); }
+
+  .contact-form-wrap { width: 100%; max-width: 560px; margin: 40px auto 32px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
+  .contact-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .contact-field { display: flex; flex-direction: column; gap: 8px; }
+  .contact-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; }
+  .contact-input { background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: var(--white); padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s; width: 100%; }
+  .contact-input:focus { border-color: var(--cyan); }
+  .contact-input::placeholder { color: var(--sub); }
+  .contact-textarea { resize: vertical; min-height: 130px; }
+
+  @media (max-width: 600px) { .contact-field-row { grid-template-columns: 1fr; } }
  
   footer { border-top: 1px solid var(--border); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--white); }
@@ -149,10 +171,25 @@
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
- 
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 200; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: transform 0.3s, opacity 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(11,12,16,0.98); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Space Mono', monospace; font-size: 1.2rem; color: var(--sub); text-decoration: none; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+  .mobile-menu a:hover { color: var(--cyan); }
+
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     .nav-links { display: none; }
+    .nav-resume { display: none; }
+    .nav-github { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
     .hero { padding: 100px 24px 80px; }
     .hero-title { font-size: 3rem; }
     .hero-stats { flex-wrap: wrap; gap: 24px; }
@@ -179,8 +216,29 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <div class="nav-right">
+    <a href="https://github.com/DeepakYadav-codez" target="_blank" class="nav-github" title="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/deepak-yadav-b076a82a7" target="_blank" class="nav-github" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://drive.google.com/file/d/1UmSjyLLsMq76Q-ejp8NTUJ7gQSIHycbG/view?usp=sharing" target="_blank" class="nav-resume">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="https://drive.google.com/file/d/1UmSjyLLsMq76Q-ejp8NTUJ7gQSIHycbG/view?usp=sharing" target="_blank" class="mobile-link" style="color:var(--cyan)">Resume ↗</a>
+</div>
  
 <section class="hero" id="home">
   <div class="hero-grid-lines"></div>
@@ -191,7 +249,11 @@
     <span class="available-dot"></span>
     Available for new projects
   </div>
- 
+  <div class="available-badge" style="border-color:rgba(127,90,240,0.35);color:var(--purple);animation-delay:0.15s;">
+    <span style="width:6px;height:6px;background:var(--purple);border-radius:50%;flex-shrink:0;box-shadow:0 0 8px var(--purple);"></span>
+    Currently exploring: Django · FastAPI
+  </div>
+
   <div class="hero-eyebrow">Python Developer</div>
  
   <h1 class="hero-title">
@@ -207,6 +269,10 @@
  
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="https://drive.google.com/file/d/1UmSjyLLsMq76Q-ejp8NTUJ7gQSIHycbG/view?usp=sharing" target="_blank" class="btn-resume">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Resume
+    </a>
     <a href="#contact" class="btn-secondary">Get In Touch</a>
   </div>
  
@@ -216,12 +282,12 @@
       <div class="stat-label">Projects Built</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Technologies</div>
+      <div class="stat-num">1</div>
+      <div class="stat-label">Freelance Client</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">2025</div>
-      <div class="stat-label">Batch Year</div>
+      <div class="stat-num">2+</div>
+      <div class="stat-label">Live Deployments</div>
     </div>
   </div>
 </section>
@@ -253,6 +319,8 @@
         <div class="skill-tag">Git</div>
         <div class="skill-tag">GitHub</div>
         <div class="skill-tag">Render</div>
+        <div class="skill-tag">Firebase</div>
+        <div class="skill-tag">Netlify</div>
       </div>
     </div>
   </div>
@@ -300,7 +368,7 @@
     <h2 class="projects-title">Projects that<br><span style="color:var(--cyan)">shipped.</span></h2>
   </div>
   <div class="project-list reveal">
-    <div class="project-item">
+    <a class="project-item" href="https://villageconnect-08eb.onrender.com" target="_blank">
       <div class="project-num">001</div>
       <div class="project-info">
         <div class="project-name">VillageConnect</div>
@@ -310,8 +378,8 @@
         <div class="project-tags"><span class="ptag">Flask</span><span class="ptag">SQLite</span><span class="ptag">Render</span></div>
         <div class="project-arrow">↗</div>
       </div>
-    </div>
-    <div class="project-item">
+    </a>
+    <a class="project-item" href="https://github.com/DeepakYadav-codez/ewaste-tracker" target="_blank">
       <div class="project-num">002</div>
       <div class="project-info">
         <div class="project-name">E-Waste Tracker</div>
@@ -321,18 +389,18 @@
         <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">MongoDB</span></div>
         <div class="project-arrow">↗</div>
       </div>
-    </div>
-    <div class="project-item">
+    </a>
+    <a class="project-item" href="https://customer-servicee.netlify.app/" target="_blank">
       <div class="project-num">003</div>
       <div class="project-info">
         <div class="project-name">Customer Service Website</div>
         <div class="project-desc">A freelance project built with a senior developer — a professional customer service platform with inquiry management and responsive design</div>
       </div>
       <div class="project-meta">
-        <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">Freelance</span></div>
+        <div class="project-tags"><span class="ptag">Flask</span><span class="ptag">Firebase</span><span class="ptag">Netlify</span></div>
         <div class="project-arrow">↗</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
  
@@ -370,9 +438,25 @@
     <div class="cta-eyebrow">Let's Build Something</div>
     <h2 class="cta-title">Got a project<br>in <span class="cyan">mind?</span></h2>
     <p class="cta-sub">Whether it's a Flask API, a college project, or a freelance website — I'm ready to contribute, learn and deliver. Let's build something real.</p>
-    <a href="mailto:dy959485@gmail.com" class="cta-email">dy959485@gmail.com</a>
-    <div style="margin-top: 32px;">
-      <a href="mailto:dy959485@gmail.com" class="btn-primary" style="display:inline-block;">Send Me a Message</a>
+    <div class="contact-form-wrap">
+      <div class="contact-field-row">
+        <div class="contact-field">
+          <label class="contact-label">Your Name</label>
+          <input type="text" id="from_name" class="contact-input" placeholder="John Doe" />
+        </div>
+        <div class="contact-field">
+          <label class="contact-label">Your Email</label>
+          <input type="email" id="from_email" class="contact-input" placeholder="john@example.com" />
+        </div>
+      </div>
+      <div class="contact-field">
+        <label class="contact-label">Message</label>
+        <textarea id="message" class="contact-input contact-textarea" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button id="sendBtn" class="btn-primary" style="width:100%;justify-content:center;display:flex;align-items:center;gap:10px;border:none;cursor:pointer;">
+        <span id="sendText">Send Message</span>
+      </button>
+      <div id="formMsg" style="margin-top:16px;font-family:'Space Mono',monospace;font-size:0.8rem;text-align:center;display:none;"></div>
     </div>
     <div class="cta-socials">
       <a href="https://github.com/DeepakYadav-codez" class="social-link" target="_blank">GH</a>
@@ -417,7 +501,7 @@
   }
   setTimeout(type, 1200);
  
-  const items = ['Python', 'Flask', 'REST API', 'SQLite', 'MongoDB', 'Postman', 'Git', 'GitHub', 'Render', 'Backend Dev', 'Internship', 'Freelance'];
+  const items = ['Python', 'Flask', 'REST API', 'SQLite', 'MongoDB', 'Postman', 'Git', 'GitHub', 'Render', 'Firebase', 'Netlify', 'Backend Dev', 'Internship', 'Freelance'];
   const track = document.getElementById('marqueeTrack');
   [...items, ...items].forEach(item => { const d = document.createElement('div'); d.className='marquee-item'; d.innerHTML=`<span class="dot"></span>${item}`; track.appendChild(d); });
  
@@ -430,6 +514,93 @@
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) { nav.style.background='rgba(11,12,16,0.97)'; nav.style.backdropFilter='blur(20px)'; nav.style.borderBottom='1px solid rgba(0,255,255,0.08)'; }
     else { nav.style.background='linear-gradient(to bottom, rgba(11,12,16,0.95), transparent)'; nav.style.backdropFilter='none'; nav.style.borderBottom='none'; }
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Stats counter animation
+  function animateCounter(el, target, suffix) {
+    let start = 0;
+    const duration = 1800;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(ease * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums.forEach(n => {
+          const raw = n.textContent.trim();
+          const target = parseInt(raw);
+          const suffix = raw.includes('+') ? '+' : '';
+          animateCounter(n, target, suffix);
+        });
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) statsObserver.observe(statsEl);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init('ftIc0974CaHI9yop7');
+  document.getElementById('sendBtn').addEventListener('click', function() {
+    const name = document.getElementById('from_name').value.trim();
+    const email = document.getElementById('from_email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const btn = document.getElementById('sendBtn');
+    const sendText = document.getElementById('sendText');
+    const formMsg = document.getElementById('formMsg');
+    if (!name || !email || !message) {
+      formMsg.style.display = 'block';
+      formMsg.style.color = '#ff6b6b';
+      formMsg.textContent = 'Please fill in all fields.';
+      return;
+    }
+    sendText.textContent = 'Sending...';
+    btn.disabled = true;
+    emailjs.send('service_c4axqap', 'template_6sunm9l', {
+      from_name: name,
+      from_email: email,
+      message: message
+    }).then(() => {
+      sendText.textContent = 'Send Message';
+      btn.disabled = false;
+      formMsg.style.display = 'block';
+      formMsg.style.color = '#00ff88';
+      formMsg.textContent = '✓ Message sent! I\'ll get back to you soon.';
+      document.getElementById('from_name').value = '';
+      document.getElementById('from_email').value = '';
+      document.getElementById('message').value = '';
+    }).catch(() => {
+      sendText.textContent = 'Send Message';
+      btn.disabled = false;
+      formMsg.style.display = 'block';
+      formMsg.style.color = '#ff6b6b';
+      formMsg.textContent = 'Something went wrong. Please try again.';
+    });
   });
 </script>
 </body>
